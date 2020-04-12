@@ -21,14 +21,15 @@
 				<strong>${msg}</strong>
 			</div>
 		</c:if>
-		<section class="jumbotron">
+		<form action="/survey" method="post" name="RegForm"
+					onsubmit="return FullName()">
+		<section class="container container-fluid">
 			<center>
-				<h1>Survey</h1>
+				<h1 id="title1">Survey</h1>
 			</center>
 			<br>
 			<center>
-				<form action="/survey" method="post" name="RegForm"
-					onsubmit="return FullName()">
+				
 					*Name: <input type="text" name="name" id="name" required> <br>
 					<br> *Email: <input type="email" name="email" required>
 
@@ -58,8 +59,14 @@
 						<option value="employed">Employed</option>
 						<option value="unemployed">UnEmployed</option>
 						<option value="retired">Retired</option>
-
-					</select> <br> <br> How likely is that you would recommend coding
+							
+					</select>
+					<br><br> Have you enrolled in a coding bootcamp before?
+					<label><div class="responsive-menu"><input type="radio" name="enrolled" value="yes" required>Yes
+					</div></label>
+										<label><div><input type="radio" name="enrolled" value="no" required>No</div></label>
+					
+					 <br> <br> How likely is that you would recommend coding
 					bootcamp to a friend? <label><div>
 							<input type="radio" name="recommend" value="definitely" required>Definitely
 						</div></label> <label><div>
@@ -91,13 +98,17 @@
 					<br> <font size="1">(Maximum characters: 400)<br>
 						You have <input readonly type="text" name="countdown" size="3"
 						value="400"> characters left.
-					</font> <br> <br> <br> <input type="submit" name="submit"
-						value="submit"> <br> <br>
-
-				</form>
+					</font> <br> <br> <br> <!-- <button type="button" name="submit" class="btn btn1"
+						value="submit">Submit</button> <br> <br> -->
+						
 			</center>
-
+<div class="container-div">
+						<button class="btn btn1">Submit</button>
+						</div>
 		</section>
+		
+						</form>
+		
 		<script>
 			var input = document.getElementById('name');
 			input.oninvalid = function(event) {

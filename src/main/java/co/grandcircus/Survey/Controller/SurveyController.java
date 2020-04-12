@@ -37,7 +37,7 @@ public class SurveyController {
 			@RequestParam(value = "age") String age, @RequestParam(value = "role") String role,
 			@RequestParam(value = "recommend") String codingBootcampRecommendation,
 			@RequestParam(value = "skills") String futureSkills, @RequestParam("cm") String comment,
-			RedirectAttributes red) {
+			@RequestParam(value="enrolled", required=true)String enrolled,RedirectAttributes red) {
 		List<Survey> em = infoRepo.findAll();
 		for (Survey ems : em) {
 			if (ems.getEmail().equalsIgnoreCase(email)) {
@@ -59,6 +59,7 @@ public class SurveyController {
 		information.setRole(role);
 		information.setFutureSkills(futureSkills);
 		information.setEmail(email);
+		information.setEnrolled(enrolled);
 		System.out.println("info" + information);
 
 		infoRepo.save(information);

@@ -21,6 +21,16 @@ public class Survey {
 	private String futureSkills;
 	private String comment;
 	private String email;
+	private String enrolled;
+	
+	
+	public String getEnrolled() {
+		return enrolled;
+	}
+
+	public void setEnrolled(String enrolled) {
+		this.enrolled = enrolled;
+	}
 
 	public Long getId() {
 		return id;
@@ -98,7 +108,7 @@ public class Survey {
 	public String toString() {
 		return "Survey [id=" + id + ", fullName=" + fullName + ", age=" + age + ", role=" + role + ", sex=" + sex
 				+ ", codingBootcampRecommendation=" + codingBootcampRecommendation + ", futureSkills=" + futureSkills
-				+ ", comment=" + comment + ", email=" + email + "]";
+				+ ", comment=" + comment + ", email=" + email + ", enrolled=" + enrolled + "]";
 	}
 
 }
